@@ -25,8 +25,6 @@ function createBoxes(amount) {
 
     boxes.appendChild(box);
     size += 10;
-
-    console.log(box);
   }
 }
 
