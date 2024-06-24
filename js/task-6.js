@@ -13,19 +13,14 @@ const destroyButton = controls.querySelector('button[data-destroy');
 destroyButton.classList.add('destroy');
 
 function createBoxes(amount) {
-  boxes.innerHTML = '';
-
   let size = 30;
-  for (let i = 0; i < amount; i++) {
-    const box = document.createElement('div');
-    box.style.width = `${size}px`;
-    box.style.height = `${size}px`;
-    box.style.backgroundColor = getRandomHexColor();
-    box.style.margin = '44px';
+  let boxesMarkup = '';
 
-    boxes.appendChild(box);
+  for (let i = 1; i <= amount; i++) {
+    boxesMarkup += `<div style="width: ${size}px; height: ${size}px; background-color: ${getRandomHexColor()}; margin: 20px;"></div>`;
     size += 10;
   }
+  boxes.innerHTML = boxesMarkup;
 }
 
 function destroyBoxes() {
